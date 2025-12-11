@@ -5,7 +5,7 @@
  *  e implementare le due funzioni usernameGenerator                       *
  **************************************************************************/
 
- #include <iostream>
+#include <iostream>
 #include <string>
 #include <cctype>
 
@@ -25,26 +25,27 @@ string minuscolo(string s){
           prima lettera del nome + tutto il cognome (tutto minuscolo)
 */
 string usernameGenerator(string nome, string cognome){
-    return "da implementare";
+    string s=nome[0]+cognome;
+    return minuscolo(s);
 }
 
 /*
     TODO: Implementare la funzione affinchè, a partire da 1 stringa nella forma "Nome Cognome"
           generi in output una stringa contenente uno username utente nella forma:
           prima lettera del nome + tutto il cognome (tutto minuscolo)
-    
+
     Hint: rispetto alla funzione precedente, splittare (spezzare il nome dal cognome, basandosi sullo spazio)
           e ripetere la stessa logica. E' possibile anche evitare di ripetere la logica? Magari chiamando la stessa funzione sopra?
 
 */
 string usernameGenerator(string nomeCognome){
-    return "da implementare";
+
+    //return usernameGenerator(nome,cognome);
 }
 
 // main con testing
 int main()
 {
-
     string nome = "Mario";
     string cognome = "Rossi";
 
@@ -54,8 +55,8 @@ int main()
 
     string username2 = usernameGenerator(nomeCognome);
 
-    cout << "Primo utente: " << nome << " " << cognome << ". Username: " << username1;
-    cout << "Secondo utente: " << nomeCognome << ". Username: " << username2;
+    cout << "Primo utente: " << nome << " " << cognome << ". Username: " << username1<<endl;
+    cout << "Secondo utente: " << nomeCognome << ". Username: " << username2<<endl;
 
     return 0;
 }
