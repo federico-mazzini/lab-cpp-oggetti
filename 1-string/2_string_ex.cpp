@@ -23,7 +23,6 @@ void trovaCiao(string stringa){
     int z=stringa.find("ciao");
     if(z==-1)
         cout<<"la parola ciao NON è presente"<<endl;
-
     else
         cout<<"la parola ciao è presente"<<endl;
 }
