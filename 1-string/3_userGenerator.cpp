@@ -39,8 +39,10 @@ string usernameGenerator(string nome, string cognome){
 
 */
 string usernameGenerator(string nomeCognome){
-
-    //return usernameGenerator(nome,cognome);
+    int pos = nomeCognome.find(" ");
+    string nome = nomeCognome.substr(0, pos);
+    string cognome = nomeCognome.substr(pos + 1);
+    return usernameGenerator(nome, cognome);
 }
 
 // main con testing
