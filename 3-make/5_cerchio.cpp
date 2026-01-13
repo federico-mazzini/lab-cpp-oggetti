@@ -20,8 +20,6 @@ class Cerchio {
 
     // Campi
 
-    // Costruttore
-
     // Metodi set... e get...
 
     // Metodo calcolaArea
