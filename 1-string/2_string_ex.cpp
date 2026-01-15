@@ -11,6 +11,9 @@ void lunghezzaStringa(string stringa){
     int x=stringa.size();
     cout<<"la lunghezza della stringa è: "<<x<<endl;
     cout<<endl;
+    //modifica
+    cout << "Da implementare" << endl;
+
 }
 
 /*

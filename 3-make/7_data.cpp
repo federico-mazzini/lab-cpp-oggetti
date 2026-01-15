@@ -2,17 +2,17 @@
 #include <string>
 
 using namespace std;
- /********************************************************************************************
- *                                  Implementazione classe Rettangolo                        *     
+/*********************************************************************************************
+ *                                  Implementazione classe Data                              *     
  *                                                                                           *
- *   Implementare una classe Rettangolo, che modelli la figura geometrica                    *
+ *   La classe data mantiene i dati relativi a una data del calendario                       *
  *   Implementarla in maniera coerente ai seguenti requisiti:                                *
- *   - si vuole calcolare l'area e il perimetro del rettangolo                               *
- *   - si vuole stampare le informazioni del rettangolo                                      *
+ *   - si vuole che la data inserita sia valida (secondo il calendario gregoriano)           *               
+ *   - si vuole stampare la data nella forma gg/mm/aaaa, ma anche nella forma aaaa/mm/gg     *
  *                                                                                           *
  *********************************************************************************************/
 
-class Rettangolo {
+class Data {
 
     // Campi
 

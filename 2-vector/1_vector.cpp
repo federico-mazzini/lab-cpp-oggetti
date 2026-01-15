@@ -52,9 +52,9 @@ int main()
 
     // .empty()
     if (v1.empty())
-        cout << "v1 è vuoto" << endl;
+        cout << "il vector v1 è vuoto (non ha elementi)" << endl;
     else
-        cout << "v1 NON è vuoto" << endl;
+        cout << "il vector v1 NON è vuoto (contiene elementi)" << endl;
     cout << endl;
 
     // .front() e .back()
@@ -66,67 +66,26 @@ int main()
     /****************************************************************************
      *      Manipolare il contenuto di un vector attraverso i suoi metodi       */
 
-    cout << "Contenuto iniziale di v1 (vuoto), ora aggiungiamo elementi con push_back():" << endl;
 
-    // .push_back() aggiunge un elemento in fondo
+    // .push_back()
     v1.push_back(5);
     v1.push_back(10);
     v1.push_back(15);
+    // TODO: cosa fa la funzione push_back()?
 
-    cout << "Dopo tre push_back, v1 contiene: ";
-    for (int i = 0; i < v1.size(); i++) {
-        cout << v1[i] << " ";
-    }
-    cout << endl;
-    cout << "Dimensione di v1: " << v1.size() << endl;
-    cout << endl;
 
-    // .pop_back() rimuove l'ultimo elemento
-    cout << "Usiamo pop_back() per rimuovere l'ultimo elemento di v1" << endl;
+    // .pop_back()
     v1.pop_back();
+    v1.pop_back();
+    // TODO: cosa fa la funzione pop_back()?
 
-    cout << "Ora v1 contiene: ";
-    for (int i = 0; i < v1.size(); i++) {
-        cout << v1[i] << " ";
-    }
-    cout << endl;
-    cout << "Dimensione di v1: " << v1.size() << endl;
-    cout << endl;
 
-    // .insert() inserisce un elemento in una posizione specifica
-    cout << "Usiamo insert() per inserire un elemento all'inizio di v1" << endl;
-    v1.insert(v1.begin(), 100); // inserisce 100 in posizione 0
 
-    cout << "Ora v1 contiene: ";
-    for (int i = 0; i < v1.size(); i++) {
-        cout << v1[i] << " ";
-    }
-    cout << endl;
-    cout << endl;
-
-    // .erase() elimina un elemento in una certa posizione
-    if (!v1.empty()) {
-        cout << "Usiamo erase() per eliminare il primo elemento di v1" << endl;
-        v1.erase(v1.begin()); // elimina l'elemento in posizione 0
-    }
-
-    cout << "Dopo erase(), v1 contiene: ";
-    for (int i = 0; i < v1.size(); i++) {
-        cout << v1[i] << " ";
-    }
-    cout << endl;
-    cout << endl;
-
-    // .clear() svuota completamente il vector
-    cout << "Usiamo clear() per svuotare completamente v1" << endl;
+    // .clear()
     v1.clear();
+    // TODO: cosa fa la funzione clear()?
 
-    cout << "Dopo clear(), v1.size() = " << v1.size() << endl;
-    if (v1.empty())
-        cout << "v1 ora è vuoto" << endl;
-    else
-        cout << "v1 NON è vuoto (qualcosa non va!)" << endl;
-    cout << endl;
+
 
     return 0;
 }
