@@ -4,7 +4,7 @@
 using namespace std;
 
 /***********************************************************************************************************
- *                                 Modifica della classe studente (costruttore)                            *     
+ *                                 Modifica della classe studente (costruttore)                            *
  *     Quando creaimo un oggetto, non è molto comodo chiamare un metodo per ogni attributo da settare      *
  *     Ha senso creare una funzione che, in un colpo solo, assegna valori a tutti gli attributi            *
  *     Dato che è una cosa comune a tutte le classi che creiamo,                                           *
@@ -19,8 +19,8 @@ private:
 
 public:
     // Costruttore
-    Studente(string n, double e, float m): 
-        nome(n), 
+    Studente(string n, double e, float m):
+        nome(n),
         eta(e),
         media(m)
         {}
@@ -47,8 +47,9 @@ public:
 
 int main()
 {
-    // TODO Istanziare un oggetto tramite il costruttore 
-
+    // TODO Istanziare un oggetto tramite il costruttore
+    Studente s("Luca",17,8.00);
+    s.stampaStudente();
 
     return 0;
 }
