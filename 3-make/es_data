@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//avere stato corretto, ovvero no date sbagliate
+//2 metodi di stampa: DD/MM/YYYY, DD MESE YYYY
+//1 gennaio 1980 di default (con costruttore vuoto)
+//metodi get e set
+//2 costruttori
+
+class Data {
+private:
+    int giorno;
+    int mese;
+    int anno;
+
+public:
+
+    bool controlloData(){
+        if(giorno>0 && giorno<29 && mese==2)
+            return true;
+        else{
+            return false;
+        }
+
+        if((giorno>0 && giorno<31) && (mese==4 || mese==6 || mese==9 || mese==11))
+            return true;
+        else
+            return false;
+
+        if((giorno>0 && giorno<32) && (mese==1 || mese==3 || mese==5 || mese==7 || mese==8 || mese==10 || mese==12))
+            return true;
+        else
+            return false;
+
+    }
+};
+
+int main()
+{
+
+    return 0;
+}
