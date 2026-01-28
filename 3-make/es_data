@@ -1,0 +1,186 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Data{
+private:
+    int giorno;
+    int mese;
+    int anno;
+
+    bool annoBisestile(int a){
+        if((a%400==0) || (a%4==0 && a%100!=0))
+            return true;
+        else
+            return false;
+    }
+
+    int giorniMese(int m, int a){
+        if(m==2){
+            if(annoBisestile(a))
+                return 29;
+            else
+                return 28;
+        }
+        else if (m==4 || m==6 || m==9 || m==11)
+            return 30;
+        else
+            return 31;
+    }
+
+    bool dataValida(int g, int m, int a){
+        if(m<1 || m>12)
+            return false;
+        else if(g<1 || g>giorniMese(m,a))
+            return false;
+        else
+            return true;
+    }
+
+public:
+    Data(){     //costruttore di default
+        giorno=1;
+        mese=1;
+        anno=1980;}
+
+    Data(int g, int m, int a){
+        if(dataValida(g,m,a)){
+            giorno=g;
+            mese=m;
+            anno=a;}
+        else{
+            giorno=1;
+            mese=1;
+            anno=1980;
+        }
+    }
+
+    int getGiorno(){
+        return giorno;
+    }
+
+    int getMese(){
+        return mese;
+    }
+
+    int getAnno(){
+        return anno;
+    }
+
+    void setGiorno(int g){
+        if(dataValida(g,mese,anno))
+            giorno=g;
+    }
+
+    void setMese(int m){
+        if(dataValida(giorno,m,anno))
+            mese=m;
+    }
+
+    void setAnno(int a){
+        if(dataValida(giorno,mese,a))
+            anno=a;
+    }
+
+    void stampaNumerica(){
+        if(giorno<10)
+            cout<<"0";
+        cout<<giorno<<"/";
+
+        if (mese < 10)
+            cout<<"0";
+        cout<<mese<<"/";
+
+        cout << anno << endl;
+    }
+
+    void stampaTestuale(){
+        string nomeMese;
+
+        switch(mese){
+            case 1:{
+                nomeMese="gennaio";
+                break;}
+            case 2:{
+                nomeMese="febbraio";
+                break;}
+            case 3:{
+                nomeMese="marzo";
+                break;}
+            case 4:{
+                nomeMese="aprile";
+                break;}
+            case 5:{
+                nomeMese="maggio";
+                break;}
+            case 6:{
+                nomeMese="giugno";
+                break;}
+            case 7:{
+                nomeMese="luglio";
+                break;}
+            case 8:{
+                nomeMese="agosto";
+                break;}
+            case 9:{
+                nomeMese="settembre";
+                break;}
+            case 10:{
+                nomeMese="ottobre";
+                break;}
+            case 11:{
+                nomeMese="novembre";
+                break;}
+            case 12:{
+                nomeMese="dicembre";
+                break;}
+        }
+
+        cout<<giorno<<" "<<nomeMese<<" "<<anno<<endl;
+    }
+};
+
+int main(){
+    int g, m, a;
+
+    Data d1;
+    cout<<"data di default:"<<endl;
+    d1.stampaNumerica();
+    d1.stampaTestuale();
+    cout<<endl;
+
+    cout<<"inserisci il giorno: ";
+    cin>>g;
+    cout<<"inserisci il mese: ";
+    cin>>m;
+    cout<<"inserisci l'anno: ";
+    cin>>a;
+
+    Data d2(g,m,a);
+    cout<<endl;
+    cout<<"data inserita:"<<endl;
+    d2.stampaNumerica();
+    d2.stampaTestuale();
+    cout << endl;
+
+    cout<<"giorno: "<<d2.getGiorno()<<endl;
+    cout<<"mese: "<<d2.getMese()<<endl;
+    cout<<"anno: "<<d2.getAnno()<<endl;
+    cout << endl;
+
+    cout<<"inserisci nuovo giorno: ";
+    cin>>g;
+    d2.setGiorno(g);
+    cout<<"inserisci nuovo mese: ";
+    cin>>m;
+    d2.setMese(m);
+    cout<<"inserisci nuovo anno: ";
+    cin>>a;
+    d2.setAnno(a);
+    cout << endl;
+    d2.stampaNumerica();
+    d2.stampaTestuale();
+
+    return 0;
+}

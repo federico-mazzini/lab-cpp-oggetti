@@ -31,7 +31,10 @@ string emails[N] = {
 
 */
 string primoCarattereMaiuscolo(string &s) {
-
+    if(s.length()>0){
+        s[0]=toupper(s[0]);
+    }
+    return s;
 }
 
 int main() {
@@ -40,19 +43,26 @@ int main() {
     string nomiCognomi[N];
 
 
-
     // ciclo su tutte le email
     for (int i = 0; i < N; i++) {
         string email = emails[i]; //email corrente
 
         //TODO: rimuovere la parte dopo la chiocciola
+        int posChiocciola=email.find('@');
+        string parte=email.substr(0, posChiocciola);
 
         // TODO: spezzare la stringa in due parti diverse: nome e cognome (utilizzare il punto come criterio per separare)
+        int posPunto=parte.find('.');
+        string nome=parte.substr(0, posPunto);
+        string cognome=parte.substr(posPunto + 1);
 
         // TODO: rendere maiuscolo il primo carattere di nome e cognome (usare la funzione primoCarattereMaiuscolo)
+        primoCarattereMaiuscolo(nome);
+        primoCarattereMaiuscolo(cognome);
 
         // TODO: inserire in nomiCognomi[i] l'insieme delle due stringhe (concatenarle con l'operatore +)
-        
+        nomiCognomi[i]=nome+" "+cognome;
+
     }
 
     // stampa il risultato
